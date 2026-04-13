@@ -24,32 +24,38 @@
 
     .topo {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       gap: 15px;
       max-width: 1000px;
       margin: auto;
     }
 
-    .logo {
-      font-size: 30px;
-      font-weight: bold;
-      color: #f4c400;
-    }
+   .logo {
+  font-size: 35px;
+  font-weight: bold;
+  color: #f4c400;
+  line-height: 1;      /* Garante que o box da letra não tenha sobras */
+  padding-bottom: 2px; /* Empurra levemente para cima se ficar colado demais na borda */
+}
 
-    .titulo {
-      line-height: 1.1;
-    }
+   .titulo {
+  display: flex;
+  flex-direction: column; /* Garante que um fique sobre o outro */
+  line-height: 1.1;
+}
 
-    .titulo span {
-      font-size: 60px;
-      color: #ccc;
-    }
+.titulo span {
+  font-size: 50px;
+  color: #ccc;
+  display: block; /* Garante que ocupe a linha toda */
+}
 
-    .titulo h1 {
-      margin: 0;
-      font-size: 26px;
-      color: #fff;
-    }
+.titulo h1 {
+  margin: 0;
+  font-size: 35px;
+  color: #fff;
+  display: block;
+}
 
     /* MENU */
     nav {
