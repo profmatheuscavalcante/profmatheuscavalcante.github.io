@@ -1,63 +1,75 @@
+Aqui está o código completo com as alterações integradas.
+
+Fiz os seguintes ajustes para garantir a harmonia visual:
+1.  **Centralização do Header:** Agrupei o título em uma coluna centralizada.
+2.  **Alinhamento de Base:** Criei a classe `.linha-nome` para que o "PROF." e o "MATHEUS CAVALCANTE" fiquem perfeitamente alinhados lado a lado na mesma linha de base.
+3.  **Respiro Visual:** Aumentei levemente o preenchimento para um visual mais sofisticado de portal.
+
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Prof. Matheus Cavalcante SITE</title>
 
-  <!-- Fonte estilo revista -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Merriweather', serif;
       margin: 0;
-      background-color: #111;
+      background-color: #141414; /* Cor dark mode acinzentada solicitada */
       color: #fff;
     }
 
-    /* HEADER ESTILO REVISTA */
+    /* HEADER ESTILO REVISTA CENTRALIZADO */
     header {
       background-color: #000;
-      padding: 20px;
+      padding: 40px 20px; /* Mais espaço para elegância */
       border-bottom: 4px solid #f4c400;
     }
 
     .topo {
       display: flex;
-      align-items: flex-end;
-      gap: 15px;
+      flex-direction: column;
+      align-items: center; /* Centraliza horizontalmente */
       max-width: 1000px;
       margin: auto;
+      text-align: center;
     }
 
-   .logo {
-  font-size: 35px;
-  font-weight: bold;
-  color: #f4c400;
-  line-height: 1;      /* Garante que o box da letra não tenha sobras */
-  padding-bottom: 2px; /* Empurra levemente para cima se ficar colado demais na borda */
-}
+    .titulo-principal {
+      font-size: 55px;
+      color: #ccc;
+      font-weight: 300;
+      margin-bottom: 5px;
+      display: block;
+      letter-spacing: 2px;
+    }
 
-   .titulo {
-  display: flex;
-  flex-direction: column; /* Garante que um fique sobre o outro */
-  line-height: 1.1;
-}
+    /* Nova classe para alinhar PROF + MATHEUS */
+    .linha-nome {
+      display: flex;
+      align-items: baseline; /* Alinha o texto pela parte de baixo da letra */
+      gap: 12px;
+    }
 
-.titulo span {
-  font-size: 50px;
-  color: #ccc;
-  display: block; /* Garante que ocupe a linha toda */
-}
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: #f4c400;
+      line-height: 1;
+    }
 
-.titulo h1 {
-  margin: 0;
-  font-size: 35px;
-  color: #fff;
-  display: block;
-}
+    .nome-professor {
+      margin: 0;
+      font-size: 35px;
+      color: #fff;
+      font-weight: 700;
+      line-height: 1;
+    }
 
-    /* MENU */
+    /* MENU CENTRALIZADO */
     nav {
       background-color: #1a1a1a;
       padding: 0;
@@ -65,22 +77,22 @@
       border-top: 1px solid #333;
     }
 
-   nav a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 15px 20px; /* 👈 aumenta área do botão */
-  display: inline-block; /* 👈 faz o fundo preencher */
-  transition: 0.3s;
-  cursor: pointer;
-}
+    nav a {
+      color: #fff;
+      margin: 0 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 15px 25px;
+      display: inline-block;
+      transition: 0.3s;
+      cursor: pointer;
+    }
 
-   nav a:hover {
-  background-color: #f4c400;
-  color: #000;
-}
+    nav a:hover {
+      background-color: #f4c400;
+      color: #000;
+    }
 
     .conteudo {
       padding: 20px;
@@ -125,32 +137,20 @@
       background-color: #fff;
     }
 
-    .card a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 6px 10px;
-      background-color: #f4c400;
-      color: #000;
-      text-decoration: none;
-      font-size: 13px;
-    }
-
-    .card a:hover {
-      background-color: #fff;
-    }
-
     h2 {
       color: #f4c400;
       border-bottom: 2px solid #333;
-      padding-bottom: 5px;
+      padding-bottom: 10px;
+      margin-top: 30px;
     }
-   img {
-  display: block;
-  margin: 30px auto;
-  max-width: 95%;
-  border: none;
-  opacity: 0.7;
-}
+
+    img {
+      display: block;
+      margin: 30px auto;
+      max-width: 95%;
+      border-radius: 4px;
+      opacity: 0.8;
+    }
   </style>
 </head>
 
@@ -158,11 +158,11 @@
 
 <header>
   <div class="topo">
-    <div class="logo">PROF.</div>
-
-    <div class="titulo">
-      <span>PORTAL DE ESTUDOS</span>
-      <h1>MATHEUS CAVALCANTE</h1>
+    <span class="titulo-principal">PORTAL DE ESTUDOS</span>
+    
+    <div class="linha-nome">
+      <div class="logo">PROF.</div>
+      <h1 class="nome-professor">MATHEUS CAVALCANTE</h1>
     </div>
   </div>
 </header>
@@ -181,13 +181,11 @@
     <p>Este site foi criado para ajudar vocês, alunos, nos estudos.</p>
     <p>Todo material será postado aqui para acesso a qualquer momento.</p>
     <p>Use o menu acima para navegar.</p>
-      <img src="arquivos/Imagem1.png" alt="Imagem do site">
-
+    <img src="arquivos/Imagem1.png" alt="Imagem do site">
   </div>
 
   <div id="História" class="aba">
     <h2>História</h2>
-
     <div class="card">
       <h3>A vinda da família real portuguesa ao Brasil em 1808</h3>
       <div class="botoes">
@@ -195,12 +193,10 @@
         <a href="arquivos/vindadafamiliareal.html" target="_blank">📖 Ler online</a>
       </div>
     </div>
-
   </div>
 
   <div id="Arte" class="aba">
     <h2>Arte</h2>
-
     <div class="card">
       <h3>Arte no Renascimento</h3>
       <div class="botoes">
@@ -208,22 +204,18 @@
         <a href="arquivos/renascimento.html" target="_blank">📖 Ler online</a>
       </div>
     </div>
-
   </div>
 
   <div id="Links" class="aba">
     <h2>Links úteis</h2>
-
     <div class="card">
       <h3>Atividades e materiais (História) - 8º ano</h3>
       <a href="https://drive.google.com/drive/folders/1-HoLG1Cox7HMc4ejLvtdfEwE0gt6P52l?usp=drive_link" target="_blank">Acessar</a>
     </div>
-
     <div class="card">
       <h3>Atividades e materiais (Arte) - 7º ano</h3>
       <a href="https://drive.google.com/drive/folders/10J7YIH6mP2UG1oKj0s_Ty_j9h9ZP55lA?usp=drive_link" target="_blank">Acessar</a>
     </div>
-
   </div>
 
 </div>
@@ -232,10 +224,10 @@
   function mostrarAba(id) {
     const abas = document.querySelectorAll('.aba');
     abas.forEach(aba => aba.classList.remove('ativa'));
-
     document.getElementById(id).classList.add('ativa');
   }
 </script>
 
 </body>
 </html>
+```
